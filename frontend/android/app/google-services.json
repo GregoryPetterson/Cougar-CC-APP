@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "180064812645",
+    "project_id": "cougar-cc-app-ad761",
+    "storage_bucket": "cougar-cc-app-ad761.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:180064812645:android:c9b1a22edee0c4a344108c",
+        "android_client_info": {
+          "package_name": "io.cougar.cc.cougarcc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "180064812645-smrs0toeq930cf7gd0rvvjsu2o0o8brl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLAiC1KSTyP1MjqfiCx_UAL3RTRP0Ohvw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "180064812645-smrs0toeq930cf7gd0rvvjsu2o0o8brl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
