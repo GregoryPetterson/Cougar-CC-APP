@@ -2,7 +2,8 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:dotenv/dotenv.dart';
 
 var env = DotEnv(includePlatformEnvironment: false)
-..load('.env' as Iterable<String>);
+// ignore: unnecessary_string_escapes
+..load('C:\Users\gregp\Cougar-CC-APP\.env' as Iterable<String>);
 
 const scope = 'activity:write';
 var clientId = env['CLIENT_ID'];

@@ -5,7 +5,7 @@
         {
             "name": "Flutter (Chrome)",
             "program": "lib/main.dart",
-            "cwd": "frontend",
+            "cwd": "flutter",
             "deviceId": "chrome",
             "request": "launch",
             "type": "dart",
