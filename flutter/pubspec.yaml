@@ -38,6 +38,7 @@ dependencies:
   url_launcher: ^6.1.11
   firebase_core: ^2.13.1
   cloud_firestore: ^4.13.6
+  dotenv: ^4.2.0
 
 dev_dependencies:
   flutter_test:

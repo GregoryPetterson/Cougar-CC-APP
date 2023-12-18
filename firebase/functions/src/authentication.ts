@@ -4,6 +4,8 @@ import { initializeApp } from 'firebase-admin/app';
 import axios from 'axios'; // Library for making HTTP requests.
 import { getFirestore } from 'firebase-admin/firestore';
 // import { onDocumentCreated } from "firebase-functions/v2/firestore";
+import * as dotenv from 'dotenv';
+dotenv.config();
 
 initializeApp();
 
@@ -13,9 +15,9 @@ export const authentication = onRequest(async (req, res) => {
   try {
     // Parameters for OAUTH
     const code = req.query.code;
-    const clientId = '107985';
-    const clientSecret = 'c4c01aacf9ba47f82824cf8283bc539a6ec27fce';
-    const redirectUrl ='http://localhost:8000';
+    const clientId = process.env.CLIENT_ID;
+    const clientSecret = process.env.CLIENT_SECRET;
+    const redirectUrl =process.env.REDIRECT_URL;
 
 
     const response = await axios.post(`https://www.strava.com/api/v3/oauth/token?client_id=${clientId}&client_secret=${clientSecret}&code=${code}&grant_type=authorization_code`);
