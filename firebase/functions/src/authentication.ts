@@ -1,8 +1,8 @@
 import { logger } from 'firebase-functions';
 import { onRequest } from 'firebase-functions/v2/https';
 import { initializeApp } from 'firebase-admin/app';
-import axios from 'axios';
-// import { getFirestore } from "firebase-admin/firestore";
+import axios from 'axios'; // Library for making HTTP requests.
+import { getFirestore } from 'firebase-admin/firestore';
 // import { onDocumentCreated } from "firebase-functions/v2/firestore";
 
 initializeApp();
@@ -11,7 +11,7 @@ initializeApp();
 // Firestore under the path /messages/:documentId/original
 export const authentication = onRequest(async (req, res) => {
   try {
-    // Grab the text parameter.
+    // Parameters for OAUTH
     const code = req.query.code;
     const clientId = '107985';
     const clientSecret = 'c4c01aacf9ba47f82824cf8283bc539a6ec27fce';
@@ -38,6 +38,4 @@ export const authentication = onRequest(async (req, res) => {
     console.error('Error:', error);
     res.status(500).send('Internal Server Error');
   }
-
-  // res.json({ result: `Message with ID: ${writeResult.id} added.` });
 });
