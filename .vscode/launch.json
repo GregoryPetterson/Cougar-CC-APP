@@ -1,6 +1,7 @@
 {
     "version": "0.2.0",
-    "configurations": [
+    "configurations": [        
+
         {
             "name": "Flutter (Chrome)",
             "program": "lib/main.dart",
@@ -16,5 +17,6 @@
                 "8000"
             ]
         }
+          
     ]
 }
