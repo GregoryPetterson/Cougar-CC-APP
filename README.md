@@ -37,3 +37,5 @@ Messaging?
 - [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
 cuvbof-Bujqig-somwy1
+
+npm run build inside functions folder to compile typescript code to javascript.

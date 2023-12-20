@@ -1,16 +1,13 @@
-import { logger } from 'firebase-functions';
+import dotenv from 'dotenv'; dotenv.config();
 import { onRequest } from 'firebase-functions/v2/https';
 import axios from 'axios'; // Library for making HTTP requests.
 import { getFirestore } from 'firebase-admin/firestore';
 import admin = require('firebase-admin');
-import * as dotenv from 'dotenv';
-dotenv.config();
-
-import serviceAccount from '../';
-
+import * as serviceAccount from './serviceAccountKey.json';
+import { logger } from 'firebase-functions/v1';
 
 admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
+  credential: admin.credential.cert(serviceAccount as admin.ServiceAccount),
 });
 
 export const authentication = onRequest(async (req, res) => {
@@ -24,16 +21,17 @@ export const authentication = onRequest(async (req, res) => {
 
     const response = await axios.post(
       `https://www.strava.com/api/v3/oauth/token?client_id=${clientId}&client_secret=${clientSecret}&code=${code}&grant_type=authorization_code`);
-    logger.log(response.data);
-
     // Set the status code to 301 (permanent redirect)
     // and then redirect back to our flutter web page.
     res.status(301);
     res.set('Location', redirectUrl);
+    res.send();
 
     const firestore = getFirestore();
+    const collectionRef = firestore.collection('athlete');
+    const documentRef = await collectionRef.add(response.data);
+    logger.log(documentRef);
 
-    const athleteInfor = collection(firestore, '');
   } catch (error) {
     console.error('Error:', error);
     res.status(500).send('Internal Server Error');
