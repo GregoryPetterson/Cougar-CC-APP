@@ -7,6 +7,8 @@ A website and mobile app for the University of Minnesota Morris cross country te
 A button that links to Strava permissions. So we can authenticate and get data from the Strava API.
 
 Displaying the runs of our current runners and alumni.
+i have something that stores aathlete information including an access key and a refresh token.
+Functionality is needed for
 
 General posts for team announcements, pictures, etc
 
@@ -39,3 +41,5 @@ Messaging?
 cuvbof-Bujqig-somwy1
 
 npm run build inside functions folder to compile typescript code to javascript.
+
+Consider OAuth flow in the future. Not entirely sure if it follows the safest possible flow.
